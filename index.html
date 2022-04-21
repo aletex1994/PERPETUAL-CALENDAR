@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+<title>CALENDAR</title>
+<meta name="description" content="CALENDAR">
+<meta name="author" content="alessandro tezza">
+<meta name="viewport" content="width=device width, initial-scale=1.0">
+<meta charset="utf-8">
+<style>
+table, th, td {   
+                    text-align: center;
+                  border: 1px solid black;
+                  border-collapse: collapse;
+                }
+    </style>
+</head>
+    
+    <body onload="stampaCalendario(dataOggi);"><!-- ONLOAD STAMPA IL CALENDARIO CON GIORNO DI OGGI -->
+        <input type='hidden' id='aaCC'><!--INPUT HIDDEN PER RECUPERARE MESE E ANNO CORRENTE-->
+        <input type='hidden' id='mmCC'><!--''''''''''''''''''''''''''''''''''''''''''''''''-->
+    <form>  
+    <table>
+      <thead>
+          <tr>
+          <th onclick='diminuisciAA();nuovaData();stampaCalendario(dataMod)'>&lt;</th><th colspan='5' id='annoC'></th><th onclick='aumentaAA();nuovaData();stampaCalendario(dataMod)';>&gt;</th>
+          </tr>
+          <tr>
+            <th  onclick='diminuisciMM();nuovaData();stampaCalendario(dataMod);'>&lt;</th><th colspan='5' id='meseC'></th><th onclick='aumentaMM();nuovaData();stampaCalendario(dataMod);'>&gt;</th>  
+          </tr>
+          
+      </thead>
+      <tbody id='gg'></tbody>
+    </table>
+        
+        </form>
+    <script src="functions.js"></script>
+    </body>
+</html>
